@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:46:37 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/20 10:01:31 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/20 13:11:30 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ RETURN VALUE
 	The resulting substring. NULL if the memory reservation fails.
 */
 
-#include "libft.h";
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -28,6 +28,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	size;
 
 	aux_str = (char *)s;
+	size = 0;
 	while (aux_str[size] != '\0' && size < len)
 		size++;
 	ret = (char *)malloc((sizeof(char) * size) + 1);
