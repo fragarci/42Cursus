@@ -37,16 +37,16 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 ARCHIVER = ar rcs
-OUTPUT_NAME = libft.a
+NAME = libft.a
 OFILES = $(CFILES:.c=.o)
 HEADER_FILE = libft.h
 
 RM = rm -f
 
-all: $(OUTPUT_NAME)
+all: $(NAME)
 
-$(OUTPUT_NAME): $(OFILES) $(HEADER_FILE)
-	$(ARCHIVER) $(OUTPUT_NAME) $(OFILES)
+$(NAME): $(OFILES) $(HEADER_FILE)
+	$(ARCHIVER) $(NAME) $(OFILES)
 
 $(OFILES): $(CFILES)
 	$(CC) $(CFLAGS) -c $(CFILES)
@@ -55,7 +55,7 @@ clean:
 	$(RM) $(OFILES)
 
 fclean: clean
-	$(RM) $(OUTPUT_NAME) $(OFILES)
+	$(RM) $(NAME) $(OFILES)
 
 re: fclean all
 
