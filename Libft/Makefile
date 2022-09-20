@@ -40,7 +40,7 @@ HEADER_FILE = libft.h
 
 RM = rm -f
 
-all: $(OUTPUT_NAME) clean fclean
+all: $(OUTPUT_NAME)
 
 $(OUTPUT_NAME): $(OFILES) $(HEADER_FILE)
 	$(ARCHIVER) $(OUTPUT_NAME) $(OFILES)
@@ -48,10 +48,12 @@ $(OUTPUT_NAME): $(OFILES) $(HEADER_FILE)
 $(OFILES): $(CFILES)
 	$(CC) $(CFLAGS) -c $(CFILES)
 
-clean: $(OFILES)
+clean:
 	$(RM) $(OFILES)
 
-fclean: $(OUTPUT_NAME)
-	$(RM) $(OUTPUT_NAME)
+fclean: clean
+	$(RM) $(OUTPUT_NAME) $(OFILES)
 
-.PHONY : clean fclean
+re: fclean all
+
+.PHONY : clean fclean re
