@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:27:57 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/20 09:27:59 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/21 12:13:53 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ size_t	ft_strlen(const char *s)
 	size_t	ret;
 
 	ret = 0;
-	if (!s)
-		return (0);
 	while (s[ret] != '\0')
 		ret++;
 	return (ret);

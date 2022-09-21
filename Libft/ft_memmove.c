@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:25:34 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/20 09:25:36 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/21 14:36:53 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,25 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*aux_src;
 	unsigned char	*aux_dest;
+	unsigned char	*arr;
+	size_t			i;
 
 	aux_src = (unsigned char *)src;
-	aux_dest = dest;
-	if (dest == src)
-		return (dest);
-	if (dest < src)
-		ft_memcpy(dest, src, n);
-	else
+	aux_dest = (unsigned char *)dest;
+	i = 0;
+	while (aux_src[i] && i < n)
+		i++;
+	arr = (unsigned char *)malloc(sizeof(char) * i);
+	if (!arr)
+		return (0);
+	i = 0;
+	while (aux_src[i] && i < n)
 	{
-		while (n--)
-			aux_dest[n] = aux_src[n];
+		aux_src[i] = arr[i];
+		i++;
 	}
+	while (*arr)
+		*(aux_dest++) = *(arr++);
+	free(arr);
 	return (dest);
 }
