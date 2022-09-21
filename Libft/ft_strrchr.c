@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:28:42 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/20 09:28:46 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/21 17:49:43 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,14 @@ RETURN VALUE
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*last;
-	size_t	i;
+	int	i;
 
-	last = 0;
-	i = 0;
-	while (s[i])
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
 		if (s[i] == c)
-			last = (char *)(s + i);
+			return ((char *)&s[i]);
+		i--;
 	}
-	return (last);
+	return (0);
 }
