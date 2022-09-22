@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:24:55 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/21 21:47:28 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/22 10:13:57 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@ RETURN VALUE
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*str;
-	size_t	i;
+	size_t			i;
 
 	str = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{
-		if(*str == c)
+		if (*str == c)
 			return (str);
 		i++;
 	}
-	return (NULL);
+	return ((void *)0);
 }

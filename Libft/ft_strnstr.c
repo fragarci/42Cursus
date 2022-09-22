@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:28:33 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/20 09:28:35 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/22 11:54:06 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,17 @@ RETURN VALUE
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*ret;
 	size_t	i;
 
-	ret = (char *)big;
-	i = 0;
-	while (*ret && i < len)
+	if (*little == 0 || big == little)
+		return ((char *)big);
+	i = ft_strlen(little);
+	while (*big && i <= len)
 	{
-		if (ft_strncmp(ret, little, ft_strlen(little)) == 0)
-			return (ret);
-		ret++;
+		if (!(ft_strncmp((char *)big, (char *)little, ft_strlen(little))))
+			return ((char *)big);
+		big++;
 		i++;
 	}
-	return (0);
+	return ((void *)0);
 }

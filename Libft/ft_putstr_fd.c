@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:26:40 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/20 09:26:42 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/22 10:33:06 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ DESCRIPTION
 
 #include "libft.h"
 
-void	ft_putstr_ft(char const *s, int fd)
+void	ft_putstr_fd(char const *s, int fd)
 {
 	while (*s)
 		write(fd, s++, 1);

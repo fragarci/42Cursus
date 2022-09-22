@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:25:08 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/20 09:25:11 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/22 10:46:07 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,14 @@ RETURN VALUE
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char	*aux_s1;
-	const unsigned char	*aux_s2;
-	size_t				i;
+	unsigned char	*aux_s1;
+	unsigned char	*aux_s2;
+	size_t			i;
 
-	aux_s1 = s1;
-	aux_s2 = s2;
+	aux_s1 = (unsigned char *)s1;
+	aux_s2 = (unsigned char *)s2;
 	i = 0;
-	while (i < n)
-	{
-		if (aux_s1[1] != aux_s2[i])
-			return (aux_s1[i] - aux_s2[i]);
+	while (aux_s1[i] == aux_s2[i] && i < n)
 		i++;
-	}
-	return (0);
+	return (aux_s1[i] - aux_s2[2]);
 }
