@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:28:42 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/21 17:49:43 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/23 16:29:56 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	while (i >= 0)
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return ((char *)&s[i]);
 		i--;
 	}

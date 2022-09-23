@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:55:27 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/20 13:01:13 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/23 16:17:11 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,9 @@ RETURN VALUE
 	memory reservation fails.
 */
 
-char	**ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c)
+{
+	if (s && c)
+		return (0);
+	return (0);
+}

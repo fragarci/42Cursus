@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:26:47 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/21 17:40:41 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/23 16:28:54 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strchr(const char *s, int c)
 	char	*str;
 
 	str = (char *)s;
-	while (*str != c)
+	while (*str != (char)c)
 	{
 		if (*str == '\0')
 			return (NULL);
