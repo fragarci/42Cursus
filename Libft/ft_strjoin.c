@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:27:25 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/20 09:27:28 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/23 09:24:48 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*ret;
 
 	if (!s1 || !s2)
-		return (NULL);
+		return ((void *)0);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	ret = (char *)malloc(sizeof(char) * (len1 + len2));
+	ret = (char *)malloc(sizeof(char) * (len1 + len2) + 1);
 	if (!ret)
-		return (NULL);
+		return ((void *)0);
 	i = -1;
 	while (++i < (int)len1)
 		ret[i] = s1[i];

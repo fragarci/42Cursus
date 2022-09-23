@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:28:55 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/22 15:05:39 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/22 15:31:50 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,18 @@ DESCRIPTION
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	size_t	len_s1;
+	char	*ret;
+
+	if (!s1 || !set)
+		return ((void *)0);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	len_s1 = ft_strlen(s1);
+	while (len_s1 && ft_strchr(set, s1[len_s1]))
+		len_s1--;
+	ret = ft_substr((char *)s1, 0, len_s1 + 1);
+	if (!ret)
+		return ((void *)0);
+	return (ret);
 }

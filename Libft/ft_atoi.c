@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:23:00 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/20 09:23:06 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/23 11:30:25 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ int	ft_atoi(const char *nptr)
 	int	neg;
 	int	ret;
 
-	if (!nptr)
-		return (0);
 	i = 0;
 	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n'
 		|| nptr[i] == '\f' || nptr[i] == '\r' || nptr[i] == '\v')

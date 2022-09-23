@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:59:14 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/21 09:26:10 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/23 11:27:41 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ char	*ft_itoa(int n)
 
 	size = get_size(n);
 	ret = (char *)malloc((sizeof(char) * size) + 1);
+	if (!ret)
+		return ((void *)0);
 	ret[size] = '\0';
 	if (n < 0)
 		ret[0] = '-';

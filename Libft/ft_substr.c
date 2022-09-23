@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:46:37 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/20 13:11:30 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/23 09:16:13 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,26 @@ RETURN VALUE
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*aux_str;
 	char	*ret;
-	size_t	size;
+	size_t	i;
+	size_t	j;
 
-	aux_str = (char *)s;
-	size = 0;
-	while (aux_str[size] != '\0' && size < len)
-		size++;
-	ret = (char *)malloc((sizeof(char) * size) + 1);
-	size = 0;
-	while (aux_str[start] != '\0' && start < len)
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	ret = (char *)malloc(sizeof(char) * len + 1);
+	if (!ret)
+		return ((void *)0);
+	i = 0;
+	j = 0;
+	while (s[i])
 	{
-		ret[size] = aux_str[start];
-		size++;
-		start++;
+		if (i >= start && j < len)
+		{
+			ret[j] = s[i];
+			j++;
+		}
+		i++;
 	}
-	ret[size] = '\0';
+	ret[j] = 0;
 	return (ret);
 }
