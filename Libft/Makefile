@@ -33,23 +33,43 @@ ft_substr.c\
 ft_tolower.c\
 ft_toupper.c
 
+CBONUS = ft_lstadd_back.c\
+ft_lstadd_front.c\
+ft_lstclear.c\
+ft_lstdelone.c\
+ft_lstiter.c\
+ft_lstlast.c\
+ft_lstmap.c\
+ft_lstnew.c\
+ft_lstsize.c
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 ARCHIVER = ar rcs
 NAME = libft.a
 OFILES = $(CFILES:.c=.o)
+OBONUS = $(CBONUS:.c=.o)
 HEADER_FILE = libft.h
 
 RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(OFILES) $(HEADER_FILE)
-	$(ARCHIVER) $(NAME) $(OFILES)
+$(NAME): $(OFILES) $(OBONUS) $(HEADER_FILE)
+	$(ARCHIVER) $(NAME) $(OFILES) $(OBONUS)
 
 $(OFILES): $(CFILES)
 	$(CC) $(CFLAGS) -c $(CFILES)
+
+$(OBONUS): $(CBONUS)
+	$(CC) $(CFLAGS) -c $(CBONUS)
+
+libft: $(OFILES)
+	$(ARCHIVER) $(NAME) $(OFILES)
+
+bonus: $(OBONUS)
+	$(ARCHIVER) $(NAME) $(OBONUS)
 
 clean:
 	$(RM) $(OFILES)
@@ -59,4 +79,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY : clean fclean re
+.PHONY : all libft bonus clean fclean re
