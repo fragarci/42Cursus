@@ -50,14 +50,13 @@ ARCHIVER = ar rcs
 NAME = libft.a
 OFILES = $(CFILES:.c=.o)
 OBONUS = $(CBONUS:.c=.o)
-HEADER_FILE = libft.h
 
 RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(OFILES) $(OBONUS) $(HEADER_FILE)
-	$(ARCHIVER) $(NAME) $(OFILES) $(OBONUS)
+$(NAME): $(OFILES)
+	$(ARCHIVER) $(NAME) $(OFILES)
 
 $(OFILES): $(CFILES)
 	$(CC) $(CFLAGS) -c $(CFILES)
@@ -65,18 +64,15 @@ $(OFILES): $(CFILES)
 $(OBONUS): $(CBONUS)
 	$(CC) $(CFLAGS) -c $(CBONUS)
 
-libft: $(OFILES)
-	$(ARCHIVER) $(NAME) $(OFILES)
-
-bonus: $(OBONUS)
-	$(ARCHIVER) $(NAME) $(OBONUS)
+bonus: $(OFILES) $(OBONUS)
+	$(ARCHIVER) $(NAME) $(OFILES) $(OBONUS)
 
 clean:
-	$(RM) $(OFILES)
+	$(RM) $(OFILES) $(OBONUS)
 
 fclean: clean
-	$(RM) $(NAME) $(OFILES)
+	$(RM) $(NAME) $(OFILES) $(OBONUS)
 
 re: fclean all
 
-.PHONY : all libft bonus clean fclean re
+.PHONY : all bonus clean fclean re
