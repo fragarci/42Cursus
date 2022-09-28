@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_putstrn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 12:18:47 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/27 09:49:49 by fragarci         ###   ########.fr       */
+/*   Created: 2022/09/28 11:03:09 by fragarci          #+#    #+#             */
+/*   Updated: 2022/09/28 11:08:49 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "../include/printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+int	ft_putstrn(char *str)
+{
+	int	i;
 
-# define BUFFER_SIZE = 42
-
-#endif
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
+}
