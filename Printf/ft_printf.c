@@ -6,11 +6,11 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 09:23:44 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/28 11:11:01 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/28 21:19:42 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/printf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(int c)
 {
@@ -27,7 +27,13 @@ int	ft_print_formats(va_list args, const char format)
 		printed_length += ft_putchar(va_arg(args, int));
 	else if (format == 's')
 		printed_length += ft_putstrn(va_arg(args, char *));
-
+	else if (format == 'p')
+		printed_length += ft_putptrn(va_arg(args, __UINTPTR_TYPE__));
+	else if (format == 'd' || format == 'i')
+	{
+		
+	}
+	
 	return (printed_length);
 }
 

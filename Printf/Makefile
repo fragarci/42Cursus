@@ -1,6 +1,8 @@
-OBJ_PATH = obj/
-CFILES = src/ft_printf.c src/ft_putstrn.c
+CFILES = ft_printf.c\
+ft_putstrn.c\
+ft_putptrn.c
 OFILES = $(CFILES:.c=.o)
+
 NAME = libftprintf.a
 
 CC = gcc
@@ -14,5 +16,10 @@ $(NAME): $(OFILES)
 	$(ARCHIVER) $(NAME) $(OFILES)
 
 $(OFILES): $(CFILES)
-	mkdir obj
-	$(CC) $(CFLAGS) -c -o $(OBJ_PATH) $(OFILES)
+	$(CC) $(CFLAGS) -c $(CFILES)
+
+clean:
+	$(REMOVE) $(OFILES)
+
+fclean:
+	$(REMOVE) $(OFILES) $(NAME)
