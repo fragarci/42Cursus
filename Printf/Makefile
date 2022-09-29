@@ -1,6 +1,10 @@
 CFILES = ft_printf.c\
 ft_putstrn.c\
-ft_putptrn.c
+ft_putptrn.c\
+ft_putnbrn.c\
+ft_putunsignedn.c\
+ft_puthexn.c\
+ft_putpercentage.c
 OFILES = $(CFILES:.c=.o)
 
 NAME = libftprintf.a

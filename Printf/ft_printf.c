@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 09:23:44 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/28 21:19:42 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:54:14 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,13 @@ int	ft_print_formats(va_list args, const char format)
 	else if (format == 'p')
 		printed_length += ft_putptrn(va_arg(args, __UINTPTR_TYPE__));
 	else if (format == 'd' || format == 'i')
-	{
-		
-	}
-	
+		printed_length += ft_putnbrn(va_arg(args, int));
+	else if (format == 'u')
+		printed_length += ft_putunsignedn(va_arg(args, unsigned int));
+	else if (format == 'x' || format == 'X')
+		printed_length += ft_puthexn(va_arg(args, unsigned int), format);
+	else if (format == '%')
+		printed_length += ft_putpercentage();
 	return (printed_length);
 }
 

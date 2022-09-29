@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putunsignedn.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 09:27:37 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/29 11:53:56 by fragarci         ###   ########.fr       */
+/*   Created: 2022/09/29 09:43:56 by fragarci          #+#    #+#             */
+/*   Updated: 2022/09/29 09:46:59 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
+int	ft_putunsignedn(unsigned int n)
+{
+	int	len;
 
-int	ft_putchar(int c);
-int	ft_putstrn(char *str);
-int	ft_putptrn(__UINTPTR_TYPE__ ptr);
-int	ft_putnbrn(int n);
-int	ft_putunsignedn(unsigned int n);
-int	ft_puthexn(unsigned int n, const char format);
-int	ft_putpercentage(void);
-int	ft_printf(char const *str, ...);
-
-#endif
+	len = 0;
+	if (n >= 10)
+	{
+		len += ft_putnbrn(n / 10);
+		n = n % 10;
+	}
+	if (n < 10)
+		len += ft_putchar(n + 48);
+	return (len);
+}

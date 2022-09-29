@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 11:03:09 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/28 18:32:00 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/29 09:34:39 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ int	ft_putstrn(char *str)
 {
 	int	i;
 
+	if (!str)
+	{
+		ft_putstrn("(null)");
+		return (6);
+	}	
 	i = 0;
 	while (str[i])
 	{

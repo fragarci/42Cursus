@@ -6,13 +6,13 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 21:19:14 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/28 21:19:14 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/09/29 09:23:10 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int n)
+int	ft_putnbrn(int n)
 {
 	int	len;
 
