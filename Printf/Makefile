@@ -27,3 +27,7 @@ clean:
 
 fclean:
 	$(REMOVE) $(OFILES) $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
