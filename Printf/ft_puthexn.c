@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 09:53:00 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/29 11:50:31 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/10/11 18:00:37 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,3 +54,12 @@ int	ft_puthexn(unsigned int num, const char format)
 		ft_printhex(num, format);
 	return (ft_hex_len(num));
 }
+
+/*
+void ft_puthex(int n, char *base)
+{
+	if(n > 15)
+		ft_puhex(n / 16, base);
+	ft_putchar(base[n % 16]);
+}
+*/

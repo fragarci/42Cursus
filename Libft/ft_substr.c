@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:46:37 by fragarci          #+#    #+#             */
-/*   Updated: 2022/09/29 16:35:52 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/10/13 12:59:33 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
-	ret = (char *)malloc(sizeof(char) * len + 1);
+	if (ft_strlen(s) < start)
+		return ((char *)ft_calloc(sizeof(char), 1));
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	ret = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ret)
 		return ((void *)0);
 	i = 0;
@@ -46,3 +48,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ret[j] = 0;
 	return (ret);
 }
+
+// holamundo_
+// len = 4
+// start = 10

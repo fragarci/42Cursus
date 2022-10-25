@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 16:46:12 by fragarci          #+#    #+#             */
-/*   Updated: 2022/10/10 11:24:37 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/10/20 09:20:39 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_readstr(int fd, char *full_str)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*full_str[1024];
+	static char	*full_str[4096];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
