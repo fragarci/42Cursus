@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:15:38 by fragarci          #+#    #+#             */
-/*   Updated: 2022/10/04 09:59:12 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/10/28 09:23:17 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char	*ft_readstr(int fd, char *full_str)
 		if (bytes_read == -1)
 		{
 			free(buffer);
+			free(full_str);
 			return ((void *)0);
 		}
 		buffer[bytes_read] = '\0';
