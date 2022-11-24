@@ -1,0 +1,121 @@
+[SIMPLE SETUP]
+
+# Check if a a service is running
+
+    sudo service <service_name> status
+
+# Check the choosen operating system
+
+    uname -a
+
+[USER]
+
+# List users on the system
+
+    cat /etc/passwd
+
+# List the groups of a user
+
+    groups fragarci
+
+# Create a new user
+
+    useradd <username>
+
+# Set password for a user
+
+    sudo passwd <username>
+
+# Check password expire date rules
+
+    cat /etc/login.defs
+
+# Check password strength (libpam-pwquality)
+
+    nano /etc/pam.d/common-password
+
+# Create a new group
+
+    sudo addgroup <group_name>
+
+# Add user to group
+
+    sudo usermod -aG <group_name> <username>
+
+[HOSTNAME AND PARTITIONS]
+
+# Check the hostname of the machine
+
+    hostname
+
+# Change hostname of the machine
+
+    sudo nano /etc/hostname
+    sudo nano /etc/hosts
+
+# Show partitions
+
+    lsblk
+
+[SUDO]
+
+# Check that sudo is properly installed
+
+    dpkg -l | grep sudo
+
+# Show sudo rules
+
+    sudo cat /etc/sudoers
+
+[UFW]
+
+# Check if UFW is properly installed
+
+    dpkg -l | grep ufw
+
+# List active rules in UFW
+
+    sudo ufw status
+
+# Add rule to UFW
+
+    sudo ufw allow <port>
+
+# Remove UFW rule
+
+    sudo ufw status numbered
+    sudo ufw delete <number>
+
+[SSH]
+
+Check if SSH is properly installed
+
+    dpkg -l | grep ssh
+
+[SCRIPT MONITORING]
+
+# Modify cron job
+
+    sudo nano /var/spool/cron/crontabs/root
+    sudo service cron restart
+
+# Stop cron job
+
+    sudo service cron stop
+
+[BONUS]
+
+# To check that wordpress is running we connect to localhost througth the port 8080 (127.0.0.1:8080)
+
+# Fail2ban config file
+
+    cat /etc/fail2ban/jail.local
+
+# Check fail2ban client status
+
+    fail2ban-client status sshd
+
+
+
+# Change password expire date
+sudo chage -M 30 <username>
