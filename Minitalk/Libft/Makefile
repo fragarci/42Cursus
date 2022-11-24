@@ -84,6 +84,7 @@ NAME = libft.a
 
 RED = \e[38;5;9m
 GREEN = \e[38;5;10m
+DEFAULT = \e[39m
 
 # COMPILATION
 
@@ -96,27 +97,27 @@ $(LIBFT_OBJECT): $(LIBFT_FILES)
 	@mkdir -p $(LIBFT_OBJ)
 	@gcc -Wall -Wextra -Werror -c $(LIBFT_FILES)
 	@mv $(addsuffix .o, $(LIBFT_NAMES)) $(LIBFT_OBJ)
-	@echo "$(GREEN)✅ - LIBFT compiled"
+	@echo "$(GREEN)✅ - LIBFT compiled$(DEFAULT)"
 
 $(PRINTF_OBJECT): $(PRINTF_FILES)
 	@mkdir -p $(PRINTF_OBJ)
 	@gcc -Wall -Wextra -Werror -c $(PRINTF_FILES)
 	@mv $(addsuffix .o, $(PRINTF_NAMES)) $(PRINTF_OBJ)
-	@echo "$(GREEN)✅ - PRINTF compiled"
+	@echo "$(GREEN)✅ - PRINTF compiled$(DEFAULT)"
 
 $(GET_NEXT_LINE_OBJECT): $(GET_NEXT_LINE_FILES)
 	@mkdir -p $(GET_NEXT_LINE_OBJ)
 	@gcc -Wall -Wextra -Werror -c $(GET_NEXT_LINE_FILES)
 	@mv $(addsuffix .o, $(GET_NEXT_LINE_NAMES)) $(GET_NEXT_LINE_OBJ)
-	@echo "$(GREEN)✅ - GET_NEXT_LINE compiled"
+	@echo "$(GREEN)✅ - GET_NEXT_LINE compiled$(DEFAULT)"
 
 clean:
 	@rm -rf obj/
-	@echo "$(GREEN)✅ - OBJ files deleted successfully"
+	@echo "$(GREEN)✅ - OBJ files deleted successfully$(DEFAULT)"
 
 fclean:
 	@rm -rf $(NAME) obj/
-	@echo "$(GREEN)✅ - OBJ and COMPILED files deleted successfully"
+	@echo "$(GREEN)✅ - OBJ and COMPILED files deleted successfully$(DEFAULT)"
 
 re: fclean all
 
