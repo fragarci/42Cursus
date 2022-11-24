@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 22:13:35 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/24 13:44:52 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/11/24 16:33:33 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_mandelbrot(t_complex *complex)
 
 	z = ft_create_complex(0, 0);
 	n = 0;
-	while (ft_complex_module(z) <= 2 && n < 20)
+	while (ft_complex_module(z) <= 2 && n < 40)
 	{
 		ft_mul_complex(z, z);
 		ft_add_complex(z, complex);
@@ -48,7 +48,7 @@ int	ft_color_mandelbrot(int m)
 	int	saturation;
 	int	value;
 
-	hue = 255 * m / 20;
+	hue = 255 * m / 40;
 	saturation = 255;
 	if (m == 40)
 		value = 255;
@@ -70,10 +70,10 @@ void	ft_draw_mandelbrot(mlx_image_t *img, t_mandelbrot *data)
 		y = 0;
 		while ((unsigned int)y < img -> height)
 		{
-			c -> real = (double)(data->movement_x + (x / (double)img -> width
-						* data->scale_factor) * 3);
-			c -> imag = (double)(data->movement_y + (y / (double)img -> height
-						* data->scale_factor) * 2);
+			c -> real = (double)(-2 + data->movement_x
+					+ (x * data->scale_factor / (double)img -> width) * 3);
+			c -> imag = (double)(-1 + data->movement_y
+					+ (y * data->scale_factor / (double)img -> height) * 2);
 			mlx_put_pixel(img, x, y, ft_color_mandelbrot(ft_mandelbrot(c)));
 			y++;
 		}

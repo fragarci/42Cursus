@@ -6,16 +6,16 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 18:44:27 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/24 12:42:42 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/11/24 17:28:47 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include <stdlib.h>
-# include <math.h>
+# include "../Libft/include/libft.h"
 # include "../MLX42/include/MLX42/MLX42.h"
+# include <math.h>
 
 // COMPLEX NUMBERS
 
@@ -43,6 +43,12 @@ typedef struct s_mandelbrot
 	double		movement_y;
 	mlx_image_t	*img;
 }t_mandelbrot;
+
+void			mandelbrot_zoom_hook(double xdelta, double ydelta, void *param);
+void			mandelbrot_movement_hook(mlx_key_data_t keydata, void *param);
+
+void			ft_no_args(void);
+void			ft_initialize_mandelbrot(mlx_t *mlx, mlx_image_t *img);
 
 t_mandelbrot	*ft_struct_mandelbrot(mlx_image_t *img, double sclale_factor,
 					double movement_x, double movement_y);
