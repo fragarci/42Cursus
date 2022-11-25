@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 22:13:35 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/24 13:44:52 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/11/24 23:53:21 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_mandelbrot(t_complex *complex)
 
 	z = ft_create_complex(0, 0);
 	n = 0;
-	while (ft_complex_module(z) <= 2 && n < 20)
+	while (ft_complex_module(z) <= 2 && n < 40)
 	{
 		ft_mul_complex(z, z);
 		ft_add_complex(z, complex);
@@ -48,13 +48,14 @@ int	ft_color_mandelbrot(int m)
 	int	saturation;
 	int	value;
 
-	hue = 255 * m / 20;
+	hue = 255 * m / 40;
 	saturation = 255;
 	if (m == 40)
 		value = 255;
 	else
 		value = 0;
-	return (get_rgba(saturation, hue, value, 255));
+	get_rgba(saturation, hue, value, 255);
+	return (get_rgba(hue, hue, hue, 255));
 }
 
 void	ft_draw_mandelbrot(mlx_image_t *img, t_mandelbrot *data)
