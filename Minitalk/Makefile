@@ -21,9 +21,17 @@ server:
 
 clean:
 	@rm -rf client server
+	@rm -rf client_bonus server_bonus
 	@echo "$(GREEN)✅ - CLIENT and SERVER deleted successfully$(DEFAULT)"
 
+bonus: $(LIBFT)
+	@gcc -Wall -Wextra -Werror src/client_bonus.c Libft/libft.a -o client_bonus
+	@echo "$(GREEN)✅ - CLIENT compiled$(DEFAULT)"
+	@gcc -Wall -Wextra -Werror src/server_bonus.c Libft/libft.a -o server_bonus
+	@echo "$(GREEN)✅ - SERVER compiled$(DEFAULT)"
+
 fclean: clean
+	@make fclean -C Libft/
 
 re: fclean all
 
