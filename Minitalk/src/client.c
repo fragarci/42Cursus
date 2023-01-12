@@ -6,12 +6,19 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 20:14:17 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/23 18:24:54 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/12/02 10:14:02 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Libft/include/libft.h"
 #include <signal.h>
+
+void	handler(int signal)
+{
+	(void) signal;
+	ft_printf("OK!\n");
+	exit(0);
+}
 
 void	send_char(pid_t pid, char c)
 {
@@ -39,6 +46,7 @@ void	send_str(pid_t pid, const char *str)
 		send_char(pid, str[i]);
 		i++;
 	}
+	send_char(pid, '\0');
 }
 
 int	main(int argc, char const *argv[])
@@ -47,6 +55,7 @@ int	main(int argc, char const *argv[])
 
 	if (argc == 3)
 	{
+		signal(SIGUSR1, handler);
 		pid = ft_atoi(argv[1]);
 		if (pid)
 			send_str(pid, argv[2]);

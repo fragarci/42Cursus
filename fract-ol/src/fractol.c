@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 18:38:17 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/25 13:02:21 by fragarci         ###   ########.fr       */
+/*   Updated: 2022/12/01 09:00:25 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	main(int argc, char **argv)
 	if (ft_choose_fractal(argv, mlx, img))
 	{
 		mlx_terminate(mlx);
-		exit(EXIT_SUCCESS);
+		exit(EXIT_FAILURE);
 	}
 	mlx_loop_hook(mlx, &close_program, mlx);
 	mlx_loop(mlx);
