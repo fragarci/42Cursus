@@ -1,4 +1,3 @@
-
 CFILES = src/fractol.c\
 src/ft_complex.c\
 src/ft_colors.c\
@@ -13,13 +12,15 @@ CFLAGS = -Wall -Wextra -Werror
 
 MLX = MLX42/libmlx42.a
 LIBFT = Libft/libft.a
+BREW = /Users/fragarci/.brew/opt/glfw/lib
+
 
 NAME = fractol
 
 all: $(NAME)
 
 $(NAME): $(MLX) $(LIBFT)
-	$(CC) $(CFLAGS) $(CFILES) $(MLX) $(LIBFT) -ldl -lglfw -pthread -lm -o $(NAME)
+	$(CC) $(CFLAGS) $(CFILES) $(MLX) $(LIBFT) -lglfw -L $(BREW) -o $(NAME)
 
 $(MLX):
 	make -C MLX42
@@ -27,11 +28,11 @@ $(MLX):
 $(LIBFT):
 	make -C Libft
 
-clean:
-	rm -rf $(NAME)
+clean: 
+	rm $(NAME)
 
 fclean: clean
 
-re: fclean all
+re: fclean re
 
 .PHONY: all clean fclean re

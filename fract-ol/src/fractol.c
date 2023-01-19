@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 18:38:17 by fragarci          #+#    #+#             */
-/*   Updated: 2022/12/01 09:00:25 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:20:09 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ void	close_program(void *param)
 
 	mlx = param;
 	if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
+	{
 		mlx_close_window(mlx);
+	}
 }
 
 int	ft_choose_fractal(char **argv, mlx_t *mlx, mlx_image_t *img)
@@ -46,11 +48,17 @@ int	ft_choose_fractal(char **argv, mlx_t *mlx, mlx_image_t *img)
 	return (0);
 }
 
+void	ft_void(void)
+{
+	system("leaks -q fractol");
+}
+
 int	main(int argc, char **argv)
 {
 	mlx_t			*mlx;
 	mlx_image_t		*img;
 
+	atexit(ft_void);
 	if (argc <= 1)
 	{
 		ft_no_args();

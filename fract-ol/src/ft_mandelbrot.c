@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 22:13:35 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/25 11:07:28 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:29:54 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,5 @@ void	ft_draw_mandelbrot(t_mandelbrot *data)
 		}
 		x++;
 	}
+	free(c);
 }
