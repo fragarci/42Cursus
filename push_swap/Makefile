@@ -1,26 +1,39 @@
-CFILES = src/push_swap.c\
-src/args.c\
-src/instructions1.c\
-src/instructions2.c\
-src/stack.c
+NAME = push_swap
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+
+SRC = src
+OBJ = obj
+SRCS = $(wildcard $(SRC)/*.c)
+OBJS = $(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
+
+BINDIR = bin
+BIN = $(BINDIR)/$(NAME)
 
 LIBFT = Libft/libft.a
 
-NAME = push_swap
+all: $(BIN)
 
-all: $(NAME)
+$(BIN): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $@
 
-$(NAME): $(LIBFT) $(CFILES)
-	gcc -Wall -Wextra -Werror $(CFILES) $(LIBFT) -o $(NAME)
+$(OBJ)/%.o: $(SRC)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
-	make -C Libft/
+	make -C Libft
+
+debug:
+	make -C debug
 
 clean:
-	rm -rf $(NAME)
+	rm $(BINDIR)/* $(OBJ)/*
 
-fclean: clean
+fclean:
+	rm $(BINDIR)/* $(OBJ)/*
+	make fclean -C Libft
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re debug
