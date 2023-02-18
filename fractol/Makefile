@@ -39,7 +39,7 @@ clean:
 
 fclean: clean
 	@make fclean -C Libft
-	@make fclean -C MLX42
+	@make clean -C MLX42
 
 re: fclean all
 
