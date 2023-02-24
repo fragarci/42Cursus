@@ -9,7 +9,7 @@ src/ft_julia.c\
 src/error.c\
 src/numbers.c
 
-MLX = MLX42/libmlx42.a
+MLX = MLX42/build/libmlx42.a
 LIBFT = Libft/libft.a
 
 NAME = fractol
@@ -25,11 +25,11 @@ DEFAULT=\033[0m
 all: $(NAME)
 
 $(NAME): $(MLX) $(LIBFT)
-	@gcc -Wall -Wextra -Werror $(CFILES) $(MLX) $(LIBFT) -ldl -lglfw -pthread -lm -o $(NAME)
+	@gcc -Wall -Wextra -Werror $(CFILES) $(MLX) $(LIBFT) -ldl -lglfw -pthread -lm -framework Cocoa -framework OpenGL -framework IOKit -L"/Users/fragarci/.brew/opt/glfw/lib/" -o $(NAME)
 	@echo "$(GREEN)✅ - FRACTOL compiled $(DEFAULT)"
 
 $(MLX):
-	@make -C MLX42
+	@make -C MLX42/build
 
 $(LIBFT):
 	@make -C Libft
