@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:17:34 by fragarci          #+#    #+#             */
-/*   Updated: 2023/02/24 10:17:45 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/03/23 10:19:56 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(int argc, char **argv)
 	mlx_key_hook(data.mlx, &ft_main_hook, &data);
 	mlx_loop_hook(data.mlx, &ft_color_shift, &data);
 	mlx_loop(data.mlx);
+	ft_exit(&data, EXIT_SUCCESS);
 	mlx_terminate(data.mlx);
 	return (EXIT_SUCCESS);
 }

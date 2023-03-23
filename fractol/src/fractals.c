@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:49:49 by fragarci          #+#    #+#             */
-/*   Updated: 2023/02/02 18:19:54 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:26:25 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_data	ft_init_fractal(void)
 		exit(EXIT_FAILURE);
 	data.img = mlx_new_image(data.mlx, WIDTH, HEIGHT);
 	mlx_image_to_window(data.mlx, data.img, 0, 0);
+	data.complex = NULL;
 	return (data);
 }
 

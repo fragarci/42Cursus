@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:57:41 by fragarci          #+#    #+#             */
-/*   Updated: 2023/02/02 18:24:42 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:32:57 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ void	ft_exit(t_data *data, int status)
 {
 	if (status == EXIT_SUCCESS)
 	{
-		mlx_terminate(data->mlx);
-		free(data->complex);
-		exit(EXIT_SUCCESS);
+		if (data->complex)
+			free(data->complex);
 	}
 	else if (status == EXIT_FAILURE)
 	{
@@ -29,7 +28,8 @@ void	ft_exit(t_data *data, int status)
 		if (data != NULL)
 		{
 			mlx_terminate(data->mlx);
-			free(data->complex);
+			if (data->complex)
+				free(data->complex);
 		}
 		exit(EXIT_FAILURE);
 	}

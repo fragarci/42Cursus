@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:22:04 by fragarci          #+#    #+#             */
-/*   Updated: 2023/02/02 18:00:54 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:31:04 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ void	ft_main_hook(struct mlx_key_data keydata, void *param)
 	data = (t_data *)param;
 	if (keydata.key == MLX_KEY_ESCAPE)
 	{
-		mlx_terminate(data->mlx);
-		exit(EXIT_SUCCESS);
+		mlx_close_window(data->mlx);
 	}
 	if (keydata.action == MLX_RELEASE)
 	{

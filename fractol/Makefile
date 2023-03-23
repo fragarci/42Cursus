@@ -1,46 +1,47 @@
-CFILES = src/main.c\
-src/fractals.c\
-src/ft_mandelbrot.c\
-src/complex.c\
-src/colors.c\
-src/mouse.c\
-src/hooks.c\
-src/ft_julia.c\
-src/error.c\
-src/numbers.c
-
-MLX = MLX42/build/libmlx42.a
-LIBFT = Libft/libft.a
-
 NAME = fractol
 
-# COLORS
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+MLXFLAGS = -ldl -lglfw -pthread -lm -framework Cocoa -framework OpenGL -framework IOKit -L"/Users/fragarci/.brew/opt/glfw/lib/"
 
-RED = \e[38;5;9m
-GREEN = \e[38;5;10m
-DEFAULT=\033[0m
+SRC = src
+OBJ = obj
+SRCS = $(wildcard $(SRC)/*.c)
+OBJS = $(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
 
-# COMPILATION
+BINDIR = bin
+BIN = $(BINDIR)/$(NAME)
 
-all: $(NAME)
+LIBFT = Libft/libft.a
 
-$(NAME): $(MLX) $(LIBFT)
-	@gcc -Wall -Wextra -Werror $(CFILES) $(MLX) $(LIBFT) -ldl -lglfw -pthread -lm -framework Cocoa -framework OpenGL -framework IOKit -L"/Users/fragarci/.brew/opt/glfw/lib/" -o $(NAME)
-	@echo "$(GREEN)✅ - FRACTOL compiled $(DEFAULT)"
+MLX = MLX42/build/libmlx42.a
 
-$(MLX):
-	@make -C MLX42/build
+all: $(BIN)
+
+$(BIN): $(OBJS) $(LIBFT) $(MLX) bin
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX) $(MLXFLAGS) -o $@
+
+$(OBJ)/%.o: $(SRC)/%.c obj
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
-	@make -C Libft
+	make -C Libft
+
+$(MLX):
+	make -C MLX42/build
 
 clean:
-	@rm -rf $(NAME)
+	rm $(BINDIR)/* $(OBJ)/*
 
-fclean: clean
-	@make fclean -C Libft
-	@make clean -C MLX42
+fclean:
+	rm -rf $(BINDIR) $(OBJ)
+	make fclean -C Libft
+	make clean -C MLX42/build
 
 re: fclean all
 
-.PHONY: all clean fclean re
+bin:
+	mkdir bin
+
+obj:
+	mkdir obj
