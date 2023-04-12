@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 17:48:03 by fragarci          #+#    #+#             */
-/*   Updated: 2023/04/11 11:54:41 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/04/12 10:16:49 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int			ft_strcmp(char *s1, char *s2);
 void		ft_messages(char *str, t_philo *philo);
 void		ft_exit(t_simulation *sim);
 __uint64_t	ft_get_time(void);
-int			ft_usleep(__useconds_t time);
+int			ft_usleep(useconds_t time);
 int			ft_init(t_simulation *sim, char **argv, int argc);
 int			ft_thread_init(t_simulation *sim);
 int			ft_input_checker(char **argv);
