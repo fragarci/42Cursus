@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 16:46:12 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/22 19:23:20 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/06/16 10:06:16 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_readstr(int fd, char *full_str)
 	if (!buffer)
 		return ((void *)0);
 	bytes_read = 1;
-	while (!ft_strchr(full_str, '\n') && bytes_read != 0)
+	while (!ft_strchr_gnl(full_str, '\n') && bytes_read != 0)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
@@ -31,7 +31,7 @@ char	*ft_readstr(int fd, char *full_str)
 			return ((void *)0);
 		}
 		buffer[bytes_read] = '\0';
-		full_str = ft_strjoin(full_str, buffer);
+		full_str = ft_strjoin_gnl(full_str, buffer);
 	}
 	free(buffer);
 	return (full_str);
@@ -47,7 +47,7 @@ char	*get_next_line(int fd)
 	full_str[fd] = ft_readstr(fd, full_str[fd]);
 	if (!full_str[fd])
 		return ((void *)0);
-	line = ft_get_line(full_str[fd]);
-	full_str[fd] = ft_get_remain(full_str[fd]);
+	line = ft_get_line_gnl(full_str[fd]);
+	full_str[fd] = ft_get_remain_gnl(full_str[fd]);
 	return (line);
 }

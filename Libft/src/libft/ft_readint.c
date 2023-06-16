@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_readint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 16:43:33 by fragarci          #+#    #+#             */
-/*   Updated: 2023/06/16 10:02:15 by fragarci         ###   ########.fr       */
+/*   Created: 2023/06/16 18:35:30 by fragarci          #+#    #+#             */
+/*   Updated: 2023/06/16 18:35:57 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "../../include/libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+int	ft_readint(char	*prompt)
+{
+	char	*line;
+	int		ret;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-size_t	ft_strlen_gnl(char *str);
-char	*ft_strchr_gnl(char *str, int c);
-char	*ft_strjoin_gnl(char *full_str, char *buffer);
-char	*ft_get_line_gnl(char *full_str);
-char	*ft_get_remain_gnl(char *full_str);
-char	*get_next_line(int fd);
-
-#endif
+	if (prompt)
+		ft_printf(prompt);
+	line = get_next_line(STDIN_FILENO);
+	ret = ft_atoi(line);
+	free(line);
+	return (ret);
+}
