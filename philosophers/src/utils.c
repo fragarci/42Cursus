@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 20:34:36 by fragarci          #+#    #+#             */
-/*   Updated: 2023/04/11 11:35:52 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/04/12 10:17:21 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/philosophers.h"
 
-int	ft_usleep(__useconds_t time)
+int	ft_usleep(useconds_t time)
 {
 	__uint64_t	start;
 

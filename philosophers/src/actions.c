@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 20:31:23 by fragarci          #+#    #+#             */
-/*   Updated: 2023/04/11 12:11:19 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/04/12 10:17:29 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ void	ft_messages(char *str, t_philo *philo)
 	time = ft_get_time() - philo->sim->start_time;
 	if (ft_strcmp("died", str) == 0 && !philo->sim->dead)
 	{
-		printf("%lu %d %s\n", time, philo->id, str);
+		printf("%llu %d %s\n", time, philo->id, str);
 		philo->sim->dead = 1;
 	}
 	if (!philo->sim->dead)
-		printf("%lu %d %s\n", time, philo->id, str);
+		printf("%llu %d %s\n", time, philo->id, str);
 	pthread_mutex_unlock(&philo->sim->write);
 }
 

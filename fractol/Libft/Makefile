@@ -82,8 +82,8 @@ NAME = libft.a
 
 #COLORS
 
-RED = \e[38;5;9m
-GREEN = \e[38;5;10m
+RED = \033[31;1m
+GREEN = \033[32;1m
 DEFAULT=\033[0m
 
 # COMPILATION

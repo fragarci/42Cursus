@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:22:04 by fragarci          #+#    #+#             */
-/*   Updated: 2023/03/20 12:31:04 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/03/23 13:20:10 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ void	ft_main_hook(struct mlx_key_data keydata, void *param)
 	if (keydata.action == MLX_RELEASE)
 	{
 		if (keydata.key == MLX_KEY_UP)
-			data->y_mov -= 0.50;
+			data->y_mov -= 0.1 * data->scale;
 		if (keydata.key == MLX_KEY_DOWN)
-			data->y_mov += 0.50;
+			data->y_mov += 0.1 * data->scale;
 		if (keydata.key == MLX_KEY_LEFT)
-			data->x_mov -= 0.50;
+			data->x_mov -= 0.1 * data->scale;
 		if (keydata.key == MLX_KEY_RIGHT)
-			data->x_mov += 0.50;
+			data->x_mov += 0.1 * data->scale;
 		ft_color_hook(keydata, data);
 		if (data->fractal == 0)
 			ft_julia_move_hook(keydata, data);
