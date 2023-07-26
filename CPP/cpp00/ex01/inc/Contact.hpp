@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 10:59:47 by fragarci          #+#    #+#             */
-/*   Updated: 2023/04/05 14:19:33 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/07/26 10:45:18 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACH_HPP
+#ifndef CONTACT_HPP
 # define CONTACT_HPP
 
 # include <iostream>
