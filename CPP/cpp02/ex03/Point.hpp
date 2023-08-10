@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 10:47:14 by fragarci          #+#    #+#             */
-/*   Updated: 2023/08/07 12:07:51 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/08/10 10:48:19 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class Point
 {
 	private:
-		const Fixed	_x;
-		const Fixed	_y;
+		Fixed	_x;
+		Fixed	_y;
 
 	public:
 		Point(void);
