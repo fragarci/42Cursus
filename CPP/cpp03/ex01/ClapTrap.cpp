@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 10:18:10 by fragarci          #+#    #+#             */
-/*   Updated: 2023/08/15 13:31:19 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/08/16 12:53:27 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(void) {}
 
 ClapTrap::ClapTrap(std::string name): _name(name),_hit_points(10), _energy_points(10), _attack_damage(10)
 {

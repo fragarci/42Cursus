@@ -1,21 +1,19 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 13:54:49 by fragarci          #+#    #+#             */
-/*   Updated: 2023/08/15 13:57:01 by fragarci         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
 # include "ClapTrap.hpp"
+# include <iostream>
 
 class ScavTrap : public ClapTrap
 {
+	private:
+	public:
+		ScavTrap(void);
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap &o);
+		~ScavTrap();
+		void attack(const std::string &target);
+		ScavTrap& operator=(const ScavTrap &o);
 };
+
 #endif
