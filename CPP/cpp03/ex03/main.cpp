@@ -6,27 +6,31 @@
 /*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 12:24:13 by fragarci          #+#    #+#             */
-/*   Updated: 2023/08/16 17:29:24 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/08/16 18:59:37 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
-	ScavTrap scav_trap("fragarci");
-	scav_trap.attack("Bobolongo");
-	scav_trap.takeDamage(42);
-	scav_trap.beRepaired(0x2A);
-	scav_trap.guardGate();
-	for (int i = 0; i < 50; i++)
-		scav_trap.attack("Bobolongo");
-	scav_trap.beRepaired(69);
-	scav_trap.guardGate();
-	scav_trap.takeDamage(420);
-	scav_trap.takeDamage(0xFF);
-	scav_trap.beRepaired(621);
-	scav_trap.guardGate();
-	scav_trap.attack("Bobolongo");
+	DiamondTrap diamond_trap("fragarci");
+	diamond_trap.whoAmI();
+	diamond_trap.attack("Bobolongo");
+	diamond_trap.takeDamage(42);
+	diamond_trap.beRepaired(0x2A);
+	diamond_trap.highFiveGuys();
+	diamond_trap.guardGate();
+	for (int i = 0; i < 100; i++)
+		diamond_trap.attack("Bobolongo");
+	diamond_trap.beRepaired(69);
+	diamond_trap.highFiveGuys();
+	diamond_trap.guardGate();
+	diamond_trap.takeDamage(420);
+	diamond_trap.takeDamage(0xFF);
+	diamond_trap.beRepaired(621);
+	diamond_trap.highFiveGuys();
+	diamond_trap.guardGate();
+	diamond_trap.attack("Bobolongo");
 
 }
