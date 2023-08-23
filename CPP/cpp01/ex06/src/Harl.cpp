@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:08:52 by fragarci          #+#    #+#             */
-/*   Updated: 2023/07/24 17:58:36 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/08/18 11:11:55 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,22 +55,17 @@ void	Harl::complain(std::string level)
 	switch (level_enum)
 	{
 	case DEBUG:
-		Harl::debug();
-		break;
+		debug();
 	case INFO:
-		Harl::info();
-		break;
+		info();
 	case WARNING:
-		Harl::warning();
-		break;
+		warning();
 	case ERROR:
-		Harl::error();
-		break;
-	case INVALID:
-		std::cout << "Invalid Option D:";
+		error();
 		break;
 
 	default:
+		std::cout << "Invalid Option D:";
 		break;
 	}
 }
