@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 10:56:47 by fragarci          #+#    #+#             */
-/*   Updated: 2023/08/10 10:52:10 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/09/04 10:44:51 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ Point &Point::operator=(const Point &point)
 {
 	if (this == &point)
 		return (*this);
-	this->_x = point.get_X();
-	this->_y = point.get_Y();
+	(Fixed)this->_x = point.get_X();
+	(Fixed)this->_y = point.get_Y();
 	return (*this);
 }
 

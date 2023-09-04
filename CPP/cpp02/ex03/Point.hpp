@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 10:47:14 by fragarci          #+#    #+#             */
-/*   Updated: 2023/08/10 10:48:19 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/09/04 10:44:08 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class Point
 {
 	private:
-		Fixed	_x;
-		Fixed	_y;
+		Fixed const	_x;
+		Fixed const	_y;
 
 	public:
 		Point(void);
