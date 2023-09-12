@@ -6,21 +6,37 @@
 /*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 11:33:03 by fragarci          #+#    #+#             */
-/*   Updated: 2023/08/10 11:08:10 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/09/07 10:41:59 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() { this->value = 0; }
+Fixed::Fixed()
+{
+	this->value = 0;
+	std::cout << "Default constructor called" << std::endl;
+}
 
-Fixed::Fixed(const int integer) { this->value = integer << this->fractional_bits; }
+Fixed::Fixed(const int integer)
+{
+	this->value = integer << this->fractional_bits;
+	std::cout << "Int constructor called" << std::endl;
+}
 
-Fixed::Fixed(const float floater) { this->value = (int)(roundf(floater * (1 << this->fractional_bits))); }
+Fixed::Fixed(const float floater)
+{
+	this->value = (int)(roundf(floater * (1 << this->fractional_bits)));
+	std::cout << "Float constructor called" << std::endl;
+}
 
-Fixed::Fixed(const Fixed &copy) { this->value = copy.getRawBits(); }
+Fixed::Fixed(const Fixed &copy)
+{
+	this->value = copy.getRawBits();
+	std::cout << "Copy constructor called" << std::endl;
+}
 
-Fixed::~Fixed() { }
+Fixed::~Fixed() { std::cout << "Destructor called" << std::endl; }
 
 float	Fixed::toFloat(void) const { return ((float)this->value / (float)(1 << this->fractional_bits)); }
 int	Fixed::toInt(void) const { return ((int)(this->value >> this->fractional_bits)); }

@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+         #
+#    By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/24 13:17:09 by fragarci          #+#    #+#              #
-#    Updated: 2023/09/12 10:04:59 by fragarci         ###   ########.fr        #
+#    Updated: 2023/07/25 13:25:52 by fragarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex03
+NAME = ex01
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
