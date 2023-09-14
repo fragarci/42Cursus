@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 12:57:54 by fragarci          #+#    #+#             */
-/*   Updated: 2023/08/22 12:58:57 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:22:17 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class WrongAnimal
 		WrongAnimal(void);
 		WrongAnimal(std::string type);
 		WrongAnimal(const WrongAnimal &o);
-		~WrongAnimal();
+		virtual ~WrongAnimal();
 
 		WrongAnimal	&operator=(const WrongAnimal &o);
 		void	makeSound(void);

@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 13:08:40 by fragarci          #+#    #+#             */
-/*   Updated: 2023/09/13 17:27:34 by fragarci         ###   ########.fr       */
+/*   Created: 2023/08/22 10:54:59 by fragarci          #+#    #+#             */
+/*   Updated: 2023/09/13 19:20:34 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/WrongCat.hpp"
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
-WrongCat::WrongCat(void) : WrongAnimal("Wrong Cat") {}
+# include "Brain.hpp"
+# include <iostream>
 
-WrongCat::WrongCat(const WrongCat &o) : WrongAnimal(o) {}
-
-WrongCat::~WrongCat() {}
-
-WrongCat &WrongCat::operator=(const WrongCat &o)
+class AAnimal
 {
-	this->_type = o._type;
-	return (*this);
-}
+	protected:
+		std::string	_type;
+	public:
+		AAnimal(void);
+		AAnimal(std::string type);
+		AAnimal(const AAnimal &o);
+		virtual ~AAnimal() = 0;
+
+		AAnimal	&operator=(const AAnimal &o);
+		virtual void	makeSound(void) const;
+		std::string	getType(void);
+};
+
+#endif

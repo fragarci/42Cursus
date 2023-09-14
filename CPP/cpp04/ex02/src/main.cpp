@@ -6,19 +6,19 @@
 /*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 11:38:29 by fragarci          #+#    #+#             */
-/*   Updated: 2023/09/13 18:57:03 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/09/13 19:27:30 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Animal.hpp"
+#include "../inc/AAnimal.hpp"
 #include "../inc/Dog.hpp"
 #include "../inc/Cat.hpp"
 
 int	main(void)
 {
 	std::cout << "#### ANIMAL CREATION ####" << std::endl;
-	Animal	*i = new Dog();
-	Animal	*j = new Cat();
+	AAnimal	*i = new Dog();
+	AAnimal	*j = new Cat();
 
 	std::cout << std::endl << "#### ANIMAL DESTRUCTION ####" << std::endl;
 
@@ -26,7 +26,7 @@ int	main(void)
 	delete (j);
 
 	std::cout << std::endl << "#### ANIMAL ARRAY CREATION ####" << std::endl;
-	const Animal *animals[4];
+	const AAnimal *animals[4];
 
 	for (int i = 0; i < 4; i++)
 		if (i % 2)

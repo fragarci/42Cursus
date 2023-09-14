@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 13:08:40 by fragarci          #+#    #+#             */
-/*   Updated: 2023/09/13 17:27:34 by fragarci         ###   ########.fr       */
+/*   Created: 2023/08/22 11:15:39 by fragarci          #+#    #+#             */
+/*   Updated: 2023/09/13 19:20:54 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/WrongCat.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-WrongCat::WrongCat(void) : WrongAnimal("Wrong Cat") {}
+# include "AAnimal.hpp"
 
-WrongCat::WrongCat(const WrongCat &o) : WrongAnimal(o) {}
-
-WrongCat::~WrongCat() {}
-
-WrongCat &WrongCat::operator=(const WrongCat &o)
+class Dog : public AAnimal
 {
-	this->_type = o._type;
-	return (*this);
-}
+	private:
+		Brain *brain;
+	public:
+		Dog(void);
+		Dog(const Dog &o);
+		~Dog();
+		Dog &operator=(const Dog &o);
+		void makeSound(void);
+};
+
+#endif

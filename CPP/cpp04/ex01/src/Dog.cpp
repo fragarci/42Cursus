@@ -6,12 +6,23 @@
 /*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 11:17:54 by fragarci          #+#    #+#             */
-/*   Updated: 2023/08/22 11:51:10 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/09/13 18:32:11 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/Dog.hpp"
 
-Dog::Dog(void) : Animal("Dog") {}
+Dog::Dog(void) : Animal("Dog"), brain(new Brain()) {}
+
+Dog::Dog(const Dog &o) : Animal(o), brain(new Brain()) { *this = o; }
+
+Dog::~Dog() { delete (this->brain); }
+
+Dog	&Dog::operator=(const Dog &o)
+{
+	this->_type = o._type;
+	this->brain = o.brain;
+	return (*this);
+}
 
 void Dog::makeSound(void) { std::cout << "[ " << this << " ] " << this->_type << ": Awooooooo" << std::endl; }

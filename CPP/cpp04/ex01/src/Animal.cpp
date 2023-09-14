@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 11:05:10 by fragarci          #+#    #+#             */
-/*   Updated: 2023/08/22 12:00:06 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/09/13 18:12:49 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ Animal& Animal::operator=(const Animal &o)
 	return (*this);
 }
 
-void Animal::makeSound(void) { std::cout << "[ " << this << " ] " << this->_type << ": **Generic Animal Sound.mp3**" << std::endl; }
+void Animal::makeSound(void) const { std::cout << "[ " << this << " ] " << this->_type << ": **Generic Animal Sound.mp3**" << std::endl; }
 
 std::string Animal::getType(void) { return (this->_type); }

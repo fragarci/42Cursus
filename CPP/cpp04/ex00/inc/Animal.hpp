@@ -6,7 +6,7 @@
 /*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 10:54:59 by fragarci          #+#    #+#             */
-/*   Updated: 2023/08/22 11:26:27 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:05:29 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ class Animal
 		Animal(void);
 		Animal(std::string type);
 		Animal(const Animal &o);
-		~Animal();
+		virtual ~Animal();
 
 		Animal	&operator=(const Animal &o);
-		void	makeSound(void);
+		virtual void	makeSound(void) const;
 		std::string	getType(void);
 };
 
