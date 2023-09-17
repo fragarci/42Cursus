@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 11:30:41 by fragarci          #+#    #+#             */
-/*   Updated: 2023/09/14 11:58:04 by fragarci         ###   ########.fr       */
+/*   Created: 2023/09/14 16:54:08 by fragarci          #+#    #+#             */
+/*   Updated: 2023/09/17 23:11:26 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,21 @@
 
 # include "ICharacter.hpp"
 
-class Character : ICharacter
+class Character : public ICharacter
 {
 	private:
-		std::string _name;
-		AMateria	*_inventory[4];
+		AMateria			*_inventory[4];
+		std::string const	_name;
 	public:
-		Character(void);
 		Character(std::string name);
-		Character(Character const & o);
+		Character(Character const & ref);
 		~Character();
-
-		std::string const & getName(void) const;
-		void equip(AMateria* m);
+		std::string const & getName() const;
+		void equip(AMateria *m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
-		Character & operator=(Character const & o);
+		AMateria	*getInventoryIdx(int idx);
+		Character & operator=(Character const & ref);
 };
 
 #endif

@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 16:50:22 by fragarci          #+#    #+#             */
-/*   Updated: 2023/09/14 16:55:07 by fragarci         ###   ########.fr       */
+/*   Created: 2023/09/17 22:21:47 by fragarci          #+#    #+#             */
+/*   Updated: 2023/09/17 22:22:03 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
 
-# include <iostream>
-# include "ICharacter.hpp"
+# include "AMateria.hpp"
 
-class ICharacter;
-
-class AMateria
+class IMateriaSource
 {
-	protected:
-		const std::string	_type;
 	public:
-		AMateria();
-		AMateria(std::string const & type);
-		AMateria(AMateria const & o);
-		virtual ~AMateria();
-		virtual std::string const & getType() const;
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
 #endif

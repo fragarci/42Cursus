@@ -3,28 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 11:21:45 by fragarci          #+#    #+#             */
-/*   Updated: 2023/09/14 12:17:39 by fragarci         ###   ########.fr       */
+/*   Created: 2023/09/17 22:42:05 by fragarci          #+#    #+#             */
+/*   Updated: 2023/09/17 23:43:14 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Cure.hpp"
+#include "../inc/ICharacter.hpp"
+#include "../inc/IMateriaSource.hpp"
 
+Cure::Cure() : _type("cure") { std::cout << "Cure[ " << this << " ] Default constructor called" << std::endl; }
 
-Cure::Cure(void) : AMateria("cure") { std::cout << "[ " << this << " ] Cure default constructor called" << std::endl; }
+Cure::Cure(Cure const & o) : AMateria("cure"), _type(o.getType()) { std::cout << "Cure[ " << this << " ] Copy constructor called" << std::endl; }
 
-Cure::Cure(Cure const & o) : AMateria(o) { std::cout << "[ " << this << " ] Cure copy constructor called" << std::endl; }
+Cure::~Cure() { std::cout << "Cure[ " << this << " ] Destructor called" << std::endl; }
 
-Cure::~Cure() { std::cout << "[ " << this << " ] Cure destructor called" << std::endl; }
+std::string const & Cure::getType( void ) const { return (this->_type); }
 
-AMateria* Cure::clone(void) const { return (new Cure()); }
+Cure *Cure::clone() const { return (new Cure); }
 
-void Cure::use(ICharacter& target) {std:: cout << "* heals " << target.getName() << " wounds *" << std::endl; }
+void Cure::use(ICharacter& target) { std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl; }
 
-AMateria & Cure::operator=(AMateria const & o)
+Cure & Cure::operator=(Cure const & o)
 {
-	this->type = o.getType();
+	this->_type = o.getType();
 	return (*this);
 }
