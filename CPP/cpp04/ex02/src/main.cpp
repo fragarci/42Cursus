@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 11:38:29 by fragarci          #+#    #+#             */
-/*   Updated: 2023/09/13 19:27:30 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/09/18 08:52:44 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int	main(void)
 	std::cout << std::endl << "#### ANIMAL ARRAY DESTRUCTION ####" << std::endl;
 	for (int i = 0; i < 4; i++)
 		delete animals[i];
+	system("leaks -q ex02");
 	return (0);
 }

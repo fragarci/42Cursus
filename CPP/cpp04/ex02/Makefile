@@ -13,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
-$(OBJ)/%.o: $(SRC)/%.cpp obj
+$(OBJ)/%.o: $(SRC)/%.cpp | obj
 	$(CC) $(CFLAGS) -c $< -o $@
 
 obj:

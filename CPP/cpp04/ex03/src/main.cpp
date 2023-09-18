@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 16:44:00 by fragarci          #+#    #+#             */
-/*   Updated: 2023/09/18 00:27:26 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/09/18 08:38:13 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,13 @@ int main()
 	iCharacter1->use(1, *iCharacter3);
 	iCharacter1->unequip(1);
 	iCharacter1->use(1, *iCharacter3);
-	delete (iCharacter2);
-	delete (iCharacter1);
 	delete (materiaSource);
+	delete (iCharacter1);
+	delete (iCharacter2);
 	delete (iCharacter3);
-	delete (deep_copy);
 	delete (aMateria2);
 	delete (aMateria3);
+	delete (deep_copy);
+	system("leaks -q ex03");
 	return (0);
 }

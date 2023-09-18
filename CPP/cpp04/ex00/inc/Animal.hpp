@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 10:54:59 by fragarci          #+#    #+#             */
-/*   Updated: 2023/09/13 17:05:29 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/09/18 08:25:28 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Animal
 		virtual ~Animal();
 
 		Animal	&operator=(const Animal &o);
-		virtual void	makeSound(void) const;
+		virtual void makeSound(void) const;
 		std::string	getType(void);
 };
 
