@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 11:38:29 by fragarci          #+#    #+#             */
-/*   Updated: 2023/08/22 13:12:14 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/09/18 08:49:26 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,6 @@ int	main(void)
 	std::cout << std::endl << "#### WRONG ANIMAL DESTRUCTION ####" << std::endl;
 	delete (wrong_animal);
 	delete (wrong_cat);
-
+	system("leaks -q ex00");
 	return (0);
 }

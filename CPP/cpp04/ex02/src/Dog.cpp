@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 11:17:54 by fragarci          #+#    #+#             */
-/*   Updated: 2023/09/13 19:24:12 by fragarci         ###   ########.fr       */
+/*   Updated: 2023/09/18 08:30:00 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,4 @@ Dog	&Dog::operator=(const Dog &o)
 	return (*this);
 }
 
-void Dog::makeSound(void) { std::cout << "[ " << this << " ] " << this->_type << ": Awooooooo" << std::endl; }
+void Dog::makeSound(void) const { std::cout << "[ " << this << " ] " << this->_type << ": Awooooooo" << std::endl; }
