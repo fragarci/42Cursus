@@ -2,7 +2,8 @@ NAME = fractol
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-MLXFLAGS = -ldl -lglfw -pthread -lm -framework Cocoa -framework OpenGL -framework IOKit -L"/Users/fragarci/.brew/opt/glfw/lib/"
+#MLXFLAGS = -ldl -lglfw -pthread -lm -framework Cocoa -framework OpenGL -framework IOKit -L"/Users/fragarci/.brew/opt/glfw/lib/"
+MLXFLAGS = -Iinclude -ldl -lglfw -pthread -lm
 
 SRC = src
 OBJ = obj
