@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 08:45:26 by fragarci          #+#    #+#             */
-/*   Updated: 2024/01/11 11:54:37 by fragarci         ###   ########.fr       */
+/*   Updated: 2024/01/12 12:01:09 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+#if defined(__APPLE__) && defined(__MACH__)
 void	ft_leaks(void)
 {
 	system("leaks -q ex00");
 }
+#endif
 
 int	main(void)
 {
@@ -25,7 +27,12 @@ int	main(void)
 	Bureaucrat *decTooLow;
 	Bureaucrat *normal;
 
+	#if defined(__APPLE__) && defined(__MACH__)
 	atexit(ft_leaks);
+	#endif
+
+	(void) initTooHigh;
+	(void) initTooLow;
 	std::cout << "Init Rank Too Low Test" << std::endl;
 	try { initTooLow = new Bureaucrat("initTooLow", 151); }
 	catch(const std::exception& e) { std::cerr << e.what() << std::endl << std::endl; }

@@ -3,17 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 09:07:03 by fragarci          #+#    #+#             */
-/*   Updated: 2024/01/11 11:53:34 by fragarci         ###   ########.fr       */
+/*   Updated: 2024/01/12 11:56:06 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+#if defined(__APPLE__) && defined(__MACH__)
 const char *Bureaucrat::GradeTooHighException::what() const _NOEXCEPT { return ("Bureaucrat grade is too high"); }
 const char *Bureaucrat::GradeTooLowException::what() const _NOEXCEPT { return ("Bureaucrat grade is too low"); }
+#endif
+#if defined(__linux__)
+const char *Bureaucrat::GradeTooHighException::what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW { return ("Bureaucrat grade is too high"); }
+const char *Bureaucrat::GradeTooLowException::what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW { return ("Bureaucrat grade is too low"); }
+#endif
 
 Bureaucrat::Bureaucrat(void): _name("Default Bureaucrat Name"), _grade(150)
 {
