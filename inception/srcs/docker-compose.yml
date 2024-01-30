@@ -1,0 +1,79 @@
+version: '3.8'
+
+# ========== SERVICES ========== #
+services:
+  nginx:
+    image: fragarci:nginx
+    hostname: nginx
+    container_name: nginx
+    build: ./requirements/nginx
+    ports:
+      - "443:443"
+    depends_on:
+      - wordpress
+    volumes:
+      - wordpress:/var/www/wordpress
+    networks:
+      - inception
+    env_file:
+      - .env
+    restart: always
+
+  wordpress:
+    image: fragarci:wordpress
+    hostname: wordpress
+    container_name: wordpress
+    build: ./requirements/wordpress
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mariadb
+    volumes:
+      - wordpress:/var/www/wordpress
+    env_file:
+      - .env
+    networks:
+      - inception
+    restart: always
+    expose:
+      - "9000"
+
+  mariadb:
+    image: fragarci:mariadb
+    hostname: mariadb
+    container_name: mariadb
+    build: ./requirements/mariadb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb:/var/lib/mariadb
+    env_file:
+      - .env
+    networks:
+      - inception
+    restart: always
+    expose:
+      - "3306"
+
+# ========== VOLUMES ========== #
+volumes:
+  wordpress:
+    name: wordpress
+    driver: local
+    driver_opts:
+      device: /home/fragarci/data/inception/wordpress
+      o: bind
+      type: none
+
+  mariadb:
+    name: mariadb
+    driver: local
+    driver_opts:
+      device: /home/fragarci/data/inception/mariadb
+      o: bind
+      type: none
+
+# ========== NETWORKS ========== #
+networks:
+  inception:
+    driver: bridge
