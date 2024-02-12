@@ -10,22 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBERRYCREATIONFORM_HPP
-# define SHRUBERRYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 # include "AForm.hpp"
-# include <fstream>
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
-	private:
+  private:
 		std::string	_target;
 	public:
-		ShrubberyCreationForm(void);
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(const ShrubberyCreationForm &o);
-		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &o);
-		~ShrubberyCreationForm();
+		PresidentialPardonForm(void);
+		PresidentialPardonForm(std::string target);
+		PresidentialPardonForm(const PresidentialPardonForm &o);
+		PresidentialPardonForm &operator=(const PresidentialPardonForm &o);
+		~PresidentialPardonForm();
 		void execute(const Bureaucrat &executor) const;
 };
 #endif

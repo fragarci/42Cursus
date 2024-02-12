@@ -10,22 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBERRYCREATIONFORM_HPP
-# define SHRUBERRYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 # include "AForm.hpp"
-# include <fstream>
+# include <time.h>
 
-class ShrubberyCreationForm : public AForm
+class RobotomyRequestForm : public AForm
 {
 	private:
 		std::string	_target;
 	public:
-		ShrubberyCreationForm(void);
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(const ShrubberyCreationForm &o);
-		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &o);
-		~ShrubberyCreationForm();
+		RobotomyRequestForm(void);
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm(const RobotomyRequestForm &o);
+		RobotomyRequestForm &operator=(const RobotomyRequestForm &o);
+		~RobotomyRequestForm();
 		void execute(const Bureaucrat &executor) const;
 };
 #endif
