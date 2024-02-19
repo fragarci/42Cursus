@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 08:45:26 by fragarci          #+#    #+#             */
-/*   Updated: 2024/01/12 19:50:38 by fragarci         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:16:26 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #if defined(__APPLE__) && defined(__MACH__)
 void	ft_leaks(void)
 {
-	system("leaks -q ex00");
+	system("leaks -q ex01");
 }
 #endif
 
