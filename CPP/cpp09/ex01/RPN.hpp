@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 11:40:53 by fragarci          #+#    #+#             */
-/*   Updated: 2024/02/21 11:01:37 by fragarci         ###   ########.fr       */
+/*   Created: 2024/02/21 11:34:43 by fragarci          #+#    #+#             */
+/*   Updated: 2024/02/21 12:13:49 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#ifndef RPN_HPP
+# define RPN_HPP
 
-int	main(int argc, char **argv)
+# include <iostream>
+# include <string>
+# include <stack>
+
+class RPN
 {
-	if (argc != 2)
-		return (std::cerr << "Usage: " << argv[0] << " <filename>" << std::endl, 1);
+	private:
+		std::stack<int>	_stack;
+		int	_topAndRemove(void);
+	public:
+		RPN (void);
+		RPN (const RPN &o);
+		~RPN (void);
+		RPN &operator=(const RPN &o);
+		void	calculate(const std::string &str);
+};
 
-	BitcoinExchange btc = BitcoinExchange();
-	btc.processInput(argv[1]);
-	return (0);
-}
+#endif
