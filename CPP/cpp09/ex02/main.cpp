@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 17:09:03 by fragarci          #+#    #+#             */
-/*   Updated: 2024/03/10 16:34:28 by fragarci         ###   ########.fr       */
+/*   Updated: 2024/03/11 18:46:59 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 #include <sys/time.h>
+
+# define PURPLE "\033[0;35m"
+# define GREEN "\033[0;32m"
+# define DEFAULT "\033[;0m"
 
 static long int	get_time(void)
 {
@@ -41,8 +45,8 @@ int	main(int argc, char **argv)
 	l = merge.listSort(l);
 	list_time = get_time() - start_time;
 
-	std::cout << "Before: " << merge.getVector() << std::endl;
-	std::cout << "After: " << v << std::endl;
+	std::cout << PURPLE"Before: " << merge.getVector() << DEFAULT << std::endl;
+	std::cout << GREEN"After: " << v << DEFAULT << std::endl;
 	std::cout << "Time to process a range of " << v.size() << " elements with std::vector:\t"
 		<< vector_time << "us" << std::endl;
 	std::cout << "Time to process a range of " << l.size() << " elements with std::list:\t"
@@ -50,3 +54,4 @@ int	main(int argc, char **argv)
 	return (0);
 }
 // ./PmergeMe $(shuf -i 1-100000 -n 3000 | tr "\n" ' ')
+// ./PmergeMe $(jot -r 3000 1 100000 | tr '\n' ' ')
