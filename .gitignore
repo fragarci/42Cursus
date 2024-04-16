@@ -1,4 +1,10 @@
 .vscode
 .DS_Store
 debug
+.github_fragarci
+*.out
+*.o
+.dSYM
+*.a
+*.dSYM
 .devcontainer

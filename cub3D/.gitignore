@@ -1,8 +1,0 @@
-*.out
-*.o
-.vscode
-.dSYM
-.DS_Store
-cub3D
-*.a
-*.dSYM
