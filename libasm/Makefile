@@ -1,5 +1,6 @@
 NAME = libasm.a
 TEST = test_asm
+AUX = read_test.txt
 
 SRC_DIR = .
 OBJ_DIR = obj
@@ -7,23 +8,28 @@ OBJ_DIR = obj
 SFILES = $(shell find $(SRC_DIR) -type f -name '*.s')
 OFILES = $(patsubst $(SRC_DIR)/%.s,$(OBJ_DIR)/%.o,$(SFILES))
 
-all: $(NAME) $(TEST)
+all: $(NAME) $(TEST) $(AUX)
 
 $(NAME): $(OFILES)
-	ar rcs $(NAME) $(OFILES)
+	@ar rcs $(NAME) $(OFILES)
+	@clear
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.s
 	@mkdir -p $(dir $@)
-	nasm -f elf64 $< -o $@
+	@nasm -f elf64 -g $< -o $@
 
 $(TEST): main.c
-	gcc -Wall -Wextra -Werror main.c -lc $(NAME) -o $(TEST)
+	@gcc -Wall -Wextra -Werror main.c -lc $(NAME) -o $(TEST)
+
+$(AUX):
+	@echo "01234567890ABCDEF" > read_test.txt
 
 clean:
-	rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm $(NAME)
-	rm $(TEST)
+	@rm $(NAME)
+	@rm $(TEST)
+	@rm $(AUX)
 
 re: fclean all

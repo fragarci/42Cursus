@@ -12,4 +12,15 @@ global ft_read
 
 ft_read:
 	xor rax, rax
+	syscall
+	cmp rax, 0
+	jl set_errno
+	ret
+	set_errno:
+	mov rdi, -1
+	mul rdi ;rax = rax * rsi
+	mov rdi, rax ;save errno in rdi
+	call [rel __errno_location wrt ..got] ;get errno location
+	mov [rax], rdi
+	mov rax, -1
 	ret
