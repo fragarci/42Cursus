@@ -22,14 +22,14 @@ $(TEST): main.c
 	@gcc -Wall -Wextra -Werror main.c -lc $(NAME) -o $(TEST)
 
 $(AUX):
-	@echo "01234567890ABCDEF" > read_test.txt
+	@echo "0123456789ABCDEF" > read_test.txt
 
 clean:
 	@rm -rf $(OBJ_DIR)
 
 fclean: clean
-	@rm $(NAME)
-	@rm $(TEST)
-	@rm $(AUX)
+	@rm -f $(NAME)
+	@rm -f $(TEST)
+	@rm -f $(AUX)
 
 re: fclean all
