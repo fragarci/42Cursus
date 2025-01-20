@@ -102,11 +102,11 @@ void	ft_test_read(void)
 		return (perror("unexpected error"));
 	read_test = ft_read(fd, buff, 16);
 	buff[17] = 0;
-	printf("buff: %s\nreturn value: %d\n", buff, read_test);
+	printf("buff:\t\t%s\nreturn value:\t%d\n", buff, read_test);
 	close(fd);
 	printf("errno test with closed file\n");
 	read_test = ft_read(fd, buff, 16);
-	printf("return value %d\n", read_test);
+	printf("return value\t%d\n", read_test);
 	perror("ft_read");
 
 	fd = open("read_test.txt", O_RDONLY);
@@ -114,11 +114,11 @@ void	ft_test_read(void)
 		return (perror("unexpected error"));
 	read_test = read(fd, buff, 16);
 	buff[17] = 0;
-	printf("\nbuff: %s\nreturn value: %d\n", buff, read_test);
+	printf("\nbuff:\t\t%s\nreturn value:\t%d\n", buff, read_test);
 	close(fd);
 	printf("errno test with closed file\n");
 	read_test = read(fd, buff, 16);
-	printf("return value %d\n", read_test);
+	printf("return value\t%d\n", read_test);
 	perror("read");
 }
 

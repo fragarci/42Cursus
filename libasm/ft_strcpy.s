@@ -7,9 +7,9 @@ global ft_strcpy
 
 ft_strcpy:						;	char *ft_strcpy(char *dest, char *src) {
 	mov rax, rdi				;		rax = dest;
-	push rbx
+	push rbx					;		int aux = rbx;
 	xor rbx, rbx				;		rbx = 0;
-	.loop_start:				;		while (*dest != 0) {
+	.loop_start:				;		while (true) {
 	cmp BYTE[rsi], 0			;			if (*dest == 0)
 	je .loop_end				;				break;
 	mov bh, BYTE[rsi]			;			rbx = *dest;
@@ -19,5 +19,5 @@ ft_strcpy:						;	char *ft_strcpy(char *dest, char *src) {
 	jmp .loop_start				;		}
 	.loop_end:
 	mov BYTE[rdi], 0			;	*dest = 0;
-	pop rbx
-	ret							;	return (dest);
+	pop rbx						;	rbx = aux;
+	ret							;	return (rax);
