@@ -1,0 +1,2 @@
+scp -P 4242 level02@10.13.250.112:/home/user/level02/level02.pcap .
+chmod u+r level02.pcap

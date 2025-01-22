@@ -1,0 +1,4 @@
+cat /etc/passwd | grep flag01
+flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
+~/jtr/run/john --show passwd
+abcdefg
