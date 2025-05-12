@@ -52,8 +52,8 @@ clean:
 	@clear
 
 fclean: clean
-	@rm $(CNAMES)
-	@rm $(SNAMES)
+	@rm -f $(CNAMES)
+	@rm -f $(SNAMES)
 	@clear
 
 re: fclean all
