@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 13:19:42 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/19 00:24:08 by fragarci         ###   ########.fr       */
+/*   Created: 2025/07/24 15:49:13 by fragarci          #+#    #+#             */
+/*   Updated: 2025/07/24 16:32:05 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ RETURN VALUE
 	The new node
 */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {

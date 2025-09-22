@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 09:23:28 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/19 00:24:19 by fragarci         ###   ########.fr       */
+/*   Created: 2025/07/06 10:58:45 by fragarci          #+#    #+#             */
+/*   Updated: 2025/07/06 10:58:55 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,17 @@ RETURN VALUE
 	with nmemb or size equal to zero.
 */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ret;
 
+	if (size != 0 && nmemb > SIZE_MAX / size)
+		return (NULL);
 	ret = malloc(nmemb * size);
 	if (!ret)
-		return (0);
-	ft_bzero(ret, nmemb * size);
+		return (NULL);
+	ft_memset(ret, 0, nmemb * size);
 	return (ret);
 }

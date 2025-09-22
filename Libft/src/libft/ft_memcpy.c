@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:25:23 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/19 00:24:05 by fragarci         ###   ########.fr       */
+/*   Updated: 2025/07/06 11:36:25 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ RETURN VALUE
 	The memcpy() function returns a pointer to dest.
 */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 void	*ft_memcpy(void	*dest, const void *src, size_t n)
 {
@@ -29,11 +29,22 @@ void	*ft_memcpy(void	*dest, const void *src, size_t n)
 
 	if (!dest && !src)
 		return (0);
-	if ((dest == src) || n == 0)
+	if (dest == src || n == 0)
 		return (dest);
 	aux_dest = (unsigned char *)dest;
 	aux_src = (const unsigned char *)src;
+	while (n >= sizeof(u_int64_t))
+	{
+		*(u_int64_t *)aux_dest = *(u_int64_t *)aux_src;
+		aux_dest += sizeof(u_int64_t);
+		aux_src += sizeof(u_int64_t);
+		n -= sizeof(u_int64_t);
+	}
 	while (n--)
-		aux_dest[n] = aux_src[n];
+	{
+		*aux_dest = *aux_src;
+		aux_dest++;
+		aux_src++;
+	}
 	return (dest);
 }

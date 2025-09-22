@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:25:45 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/19 00:24:03 by fragarci         ###   ########.fr       */
+/*   Updated: 2025/07/06 11:37:39 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,33 @@ RETURN VALUE
     The memset() function returns a pointer to the memory area s.
 */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	*dest;
-	size_t			i;
+	register unsigned char	*dest;
+	register unsigned char	val;
+	register size_t			*word_ptr;
+	register size_t			word;
 
+	if (n == 0)
+		return (s);
 	dest = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	val = (unsigned char)c;
+	word = val;
+	word |= word << 8;
+	word |= word << 16;
+	word |= word << 32;
+	while (((uintptr_t)dest % sizeof(size_t)) && n-- > 0)
+		*dest++ = val;
+	word_ptr = (size_t *)dest;
+	while (n >= sizeof(size_t))
 	{
-		dest[i] = c;
-		i++;
+		*word_ptr++ = word;
+		n -= sizeof(size_t);
 	}
+	dest = (unsigned char *)word_ptr;
+	while (n--)
+		*dest++ = val;
 	return (s);
 }

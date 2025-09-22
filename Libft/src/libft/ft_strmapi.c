@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:28:14 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/19 00:23:33 by fragarci         ###   ########.fr       */
+/*   Updated: 2025/07/06 11:56:07 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,17 @@ RETURN VALUE
 	the memory reservation fails.
 */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*ret;
 	unsigned int	index;
 
+	if (!s || !f)
+		return (NULL);
 	ret = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!s || !f || !ret)
+	if (!ret)
 		return (NULL);
 	index = 0;
 	while (s[index])

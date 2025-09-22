@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:46:37 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/19 00:23:14 by fragarci         ###   ########.fr       */
+/*   Updated: 2025/07/06 12:00:52 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,36 +19,23 @@ RETURN VALUE
 	The resulting substring. NULL if the memory reservation fails.
 */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ret;
-	size_t	i;
-	size_t	j;
+	size_t	str_len;
 
-	if (ft_strlen(s) < start)
+	if (!s)
+		return (NULL);
+	str_len = ft_strlen(s);
+	if (str_len < start)
 		return ((char *)ft_calloc(sizeof(char), 1));
-	if (len > ft_strlen(s) - start)
-		len = ft_strlen(s) - start;
-	ret = (char *)malloc(sizeof(char) * (len + 1));
+	if (len > str_len - start)
+		len = str_len - start;
+	ret = (char *)ft_calloc(len + 1, sizeof(char));
 	if (!ret)
-		return ((void *)0);
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		if (i >= start && j < len)
-		{
-			ret[j] = s[i];
-			j++;
-		}
-		i++;
-	}
-	ret[j] = 0;
+		return (NULL);
+	ft_memcpy(ret, s + start, len);
 	return (ret);
 }
-
-// holamundo_
-// len = 4
-// start = 10

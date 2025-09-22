@@ -1,26 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_readint.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/16 18:35:30 by fragarci          #+#    #+#             */
-/*   Updated: 2023/06/16 18:35:57 by fragarci         ###   ########.fr       */
+/*   Created: 2025/07/06 11:32:09 by fragarci          #+#    #+#             */
+/*   Updated: 2025/07/24 15:43:11 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
-
-int	ft_readint(char	*prompt)
+int	ft_isspace(int c)
 {
-	char	*line;
-	int		ret;
-
-	if (prompt)
-		ft_printf(prompt);
-	line = get_next_line(STDIN_FILENO);
-	ret = ft_atoi(line);
-	free(line);
-	return (ret);
+	return (c == ' ' || c == '\t' || c == '\n'
+		|| c == '\f' || c == '\r' || c == '\v');
 }

@@ -20,7 +20,7 @@ int	ft_putstrn(char *str)
 	{
 		ft_putstrn("(null)");
 		return (6);
-	}	
+	}
 	i = 0;
 	while (str[i])
 	{

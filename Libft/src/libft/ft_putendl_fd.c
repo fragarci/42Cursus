@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 09:26:07 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/19 00:24:01 by fragarci         ###   ########.fr       */
+/*   Created: 2025/07/05 12:07:55 by fragarci          #+#    #+#             */
+/*   Updated: 2025/07/05 12:08:07 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@ DESCRIPTION
 	Send the string 's' to the given file descriptor, followed by a line break.
 */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	while (*s)
-		write(fd, s++, 1);
+	size_t	len;
+
+	if (!s)
+		return ;
+	len = ft_strlen(s);
+	write(fd, s, len);
 	write(fd, "\n", 1);
 }

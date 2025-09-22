@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 09:28:55 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/19 00:23:11 by fragarci         ###   ########.fr       */
+/*   Created: 2025/07/05 13:28:31 by fragarci          #+#    #+#             */
+/*   Updated: 2025/07/05 13:28:37 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ DESCRIPTION
 	returns true.
 */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -25,7 +25,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*ret;
 
 	if (!s1 || !set)
-		return ((void *)0);
+		return (NULL);
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	len_s1 = ft_strlen(s1);

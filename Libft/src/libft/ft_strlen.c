@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:27:57 by fragarci          #+#    #+#             */
 /*   Updated: 2022/11/19 00:23:34 by fragarci         ###   ########.fr       */
@@ -20,14 +20,14 @@ RETURN VALUE
 	to by s.
 */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	ret;
+	register const char	*str;
 
-	ret = 0;
-	while (s[ret] != '\0')
-		ret++;
-	return (ret);
+	str = s;
+	while (*str)
+		str++;
+	return (str - s);
 }

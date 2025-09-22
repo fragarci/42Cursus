@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:27:47 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/19 00:23:35 by fragarci         ###   ########.fr       */
+/*   Updated: 2025/07/06 11:54:49 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,24 @@ RETURN VALUE
 	That means the length of src.
 */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	i;
-	char	*aux_src;
+	size_t	len;
+	size_t	copy_size;
 
-	aux_src = (char *)src;
-	i = 0;
+	len = ft_strlen(src);
+	if (size == 0)
+		return (len);
 	if (size > 0)
 	{
-		while (aux_src[i] && i < size - 1)
-		{
-			dst[i] = aux_src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		if (len < size - 1)
+			copy_size = len;
+		else
+			copy_size = size - 1;
+		ft_memcpy(dst, src, copy_size);
+		dst[copy_size] = 0;
 	}
-	while (src[i])
-			i++;
-	return (i);
+	return (len);
 }

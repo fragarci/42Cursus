@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 09:26:47 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/19 00:23:46 by fragarci         ###   ########.fr       */
+/*   Created: 2025/07/05 12:32:20 by fragarci          #+#    #+#             */
+/*   Updated: 2025/07/05 12:32:45 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,17 @@ RETURN VALUE
 	these functions return a pointer to the terminator.
 */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*str;
-
-	str = (char *)s;
-	while (*str != (char)c)
+	while (*s)
 	{
-		if (*str == '\0')
-			return (NULL);
-		str++;
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
 	}
-	return (str);
+	if (*s == (char)c)
+		return ((char *)s);
+	return (NULL);
 }

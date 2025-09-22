@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:55:27 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/19 00:23:48 by fragarci         ###   ########.fr       */
+/*   Updated: 2025/07/06 11:47:56 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@ RETURN VALUE
 	memory reservation fails.
 */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 static	int	ft_count_words(char	*s, char c)
 {
 	int	i;
 	int	words;
 
+	if (!s)
+		return (0);
 	words = 0;
 	i = 0;
 	while (s[i])

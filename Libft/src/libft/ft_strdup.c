@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 09:26:59 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/19 00:23:43 by fragarci         ###   ########.fr       */
+/*   Created: 2025/07/05 12:37:57 by fragarci          #+#    #+#             */
+/*   Updated: 2025/07/05 15:36:00 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ RETURN VALUE
 	set to indicate the error.
 */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
@@ -32,7 +32,7 @@ char	*ft_strdup(const char *s)
 	size = ft_strlen(s) + 1;
 	ret = (char *)malloc(sizeof(char) * size);
 	if (!ret)
-		return (0);
-	ret = ft_memcpy(ret, s, size);
+		return (NULL);
+	ft_memcpy(ret, s, size);
 	return (ret);
 }

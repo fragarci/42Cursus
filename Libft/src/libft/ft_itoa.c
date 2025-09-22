@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fragarci <fragarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fragarci <fragarci@student.42malaga.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:59:14 by fragarci          #+#    #+#             */
-/*   Updated: 2022/11/19 00:24:18 by fragarci         ###   ########.fr       */
+/*   Updated: 2025/07/24 15:43:45 by fragarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ RETURN VALUE
 	The string representing the number. NULL if the memory reservation fails.
 */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 static int	positive(int num)
 {
